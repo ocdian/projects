@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="en-us">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
+    <script src="resources/jquery-3.5.0.min.js"></script>
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Highcharts -->
+    <script src="resources/highcharts.js"></script>
+    <!-- Main stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rwd.css">
+    <!-- Main scripts -->
+    <script src="scripts/script.js"></script>
+    <script src="scripts/dashboard.js"></script>
+    <title>COVID-19 Tracker | Dashboard</title>
+</head>
+
+<body>
+    <div id="content" class="overlay-shift-active">
+        <nav id="nav-bar" class="title-bar navbar-shift-overlay-active">
+            <div class="page-title">Dashboard</div>
+            <div id="toggle-sidebar-btn" class="toggle-sidebar">
+                <i class="material-icons">menu</i>
+            </div>
+        </nav>
+        <div class="main-content">
+            <div class="container cards-container">
+                <div style="border-left: 5px solid darkblue;" class="card">
+                    <span class="card-title">Total Cases: </span>
+                    <span style="color: darkblue; font-weight: bold;" id="total-cases-val"></span>
+                </div>
+                <div style="border-left: 5px solid #616161;" class="card">
+                    <span class="card-title">Total Deaths: </span>
+                    <span style="color: #616161; font-weight: bold;" id="total-deaths-val"></span>
+                </div>
+                <div style="border-left: 5px solid darkgreen;" class="card">
+                    <span class="card-title">Total Recovered: </span>
+                    <span style="color: darkgreen; font-weight: bold;" id="total-recovered-val"></span>
+                </div>
+                <div style="border-left: 5px solid #ffc107;" class="card">
+                    <span class="card-title">Total Active: </span>
+                    <span style="color: #ffc107; font-weight: bold;" id="total-active-val"></span>
+                </div>
+                <div style="border-left: 5px solid crimson;" class="card">
+                    <span class="card-title">Total Serious: </span>
+                    <span style="color: crimson; font-weight: bold;" id="total-serious-val"></span>
+                </div>
+                <div style="border-left: 5px solid #883818;" class="card">
+                    <span class="card-title">Total tests: </span>
+                    <span style="color: #883818; font-weight: bold;" id="total-tests-val"></span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="chart-container">
+                    <div id="total-chart">
+                    </div>
+                </div>
+                <div class="extra-info-card">
+                    <div style="border-top: 5px solid #3030f1;" class="extra-info-item">
+                        <span>Cases today: </span>
+                        <span style="color: #3030f1;" id="total-cases-today-val"></span>
+                    </div>
+                    <div style="border-top: 5px solid #4b4bcc;" class="extra-info-item">
+                        <span>Cases per one million: </span>
+                        <span style="color: #4b4bcc;" id="cases-per-mil-val"></span>
+                    </div>
+                    <div style="border-top: 5px solid #3d3d3d;" class="extra-info-item">
+                        <span>Deaths today: </span>
+                        <span style="color: #3d3d3d;" id="total-deaths-today-val"></span>
+                    </div>
+                    <div style="border-top: 5px solid #757575;" class="extra-info-item">
+                        <span>Deaths per one million: </span>
+                        <span style="color: #757575;" id="deaths-per-mil-val"></span>
+                    </div>
+                    <div style="border-top: 5px solid #da5a28;" class="extra-info-item">
+                        <span>Tests per one million: </span>
+                        <span style="color: #da5a28;" id="tests-per-mil-val"></span>
+                    </div>
+                    <div style="border-top: 5px solid #c03250;" class="extra-info-item">
+                        <span>Affected countries: </span>
+                        <span style="color: #c03250;" id="affected-countries-val"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="updated-at-container">
+                <i style="position: relative; top: 5px;" class="material-icons">update</i>
+                Last updated at <span id="updated-at"></span>
+            </div>
+        </div>
+
+        <div class="footer">
+            Made by Wissam Al Ghabra
+        </div>
+    </div>
+
+    <nav id="sidebar" class="sidebar sidebar-active">
+        <div class="sidebar-logo">
+            <span>COVID-19 Tracker</span>
+        </div>
+        <div class="sidebar-nav">
+            <a class="nav-item nav-item-active" href="#">
+                <i class="material-icons nav-icon">dashboard</i>
+                Dashboard
+            </a>
+            <a class="nav-item" href="tables.html">
+                <i class="material-icons nav-icon">table_chart</i>
+                Tables
+            </a>
+            <a class="nav-item" href="charts.html">
+                <i class="material-icons nav-icon">bar_chart</i>
+                Charts
+            </a>
+            <a class="nav-item" href="map.html">
+                <i class="material-icons nav-icon">explore</i>
+                Map
+            </a>
+            <a id="close-sidebar-btn" class="nav-item">
+                <i class="material-icons nav-icon">cancel</i>
+                Close sidebar
+            </a>
+        </div>
+    </nav>
+
+</body>
+
+</html>
