@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="en-us">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/highcharts.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/rwd.css">
+    <title>Coronavirus Tracker | Stats</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="header col-12">
+            <span class="header-title">Coronavirus Tracker</span>
+            <span class="links">
+                <a class="link inactive" href="map.html">Map</a>
+                <a class="link active" href="#">Stats</a>
+            </span>
+        </div>
+    </div>
+    <div class="world-stats row">
+        <div class="total-box">
+            <h3>Total Cases</h3>
+            <p id="total-cases"></p>
+        </div>
+        <div class="total-box">
+            <h3>Total Deaths</h3>
+            <p class="death-stats" id="total-deaths"></p>
+        </div>
+        <div class="total-box">
+            <h3>Total Recoveries</h3>
+            <p class="recovery-stats" id="total-recoveries"></p>
+        </div>
+        <div class="total-box">
+            <h3>Active Cases</h3>
+            <p id="active-cases"></p>
+        </div>
+        <div class="total-box">
+            <h3>Countries Affected</h3>
+            <p id="countries-affected"></p>
+        </div>
+    </div>
+    <div class="row charts-container">
+        <div class="chart" id="total-cases-chart" height="400px"></div>
+        <div class="chart" id="total-deaths-chart" height="400px"></div>
+        <div class="chart" id="total-recovered-chart" height="400px"></div>
+    </div>
+    <table id="table">
+        <tr>
+            <th>Country</th>
+            <th>Cases</th>
+            <th>Deaths</th>
+            <th>Serious</th>
+            <th>Total recovered</th>
+        </tr>
+    </table>
+    <script src="scripts/stats.js"></script>
+    <script src="scripts/charts.js"></script>
+</body>
+
+</html>

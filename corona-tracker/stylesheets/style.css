@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    background-color: rgb(207, 205, 204);
+    font-family: 'Baloo Bhaina 2','Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 3px 3px  rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 100%;
+}
+
+.header-title {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 15px;
+}
+
+.link {
+    float: right;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 15px;
+}
+
+.active {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+tr, .active {
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.active:hover {
+    opacity: 1;
+    box-shadow: 2px 2px 3px 3px  rgba(0, 0, 0, 0.2);
+}
+
+tr:hover {
+    opacity: 1;
+    box-shadow: 2px 2px 3px 3px  rgba(0, 0, 0, 0.2);
+}
+
+.inactive {
+    color: white;
+}
+
+#map {
+    width: 100%;
+}
+
+.world-stats {
+    text-align: center;
+    padding: 20px;
+}
+
+.total-box {
+    float: left;
+    width: 20%;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.death-stats {
+    color: red;
+}
+
+.recovery-stats {
+    color: green;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #aaa;
+}
+
+th, td {
+    text-align: center;
+    padding: 15px;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+.charts-container {
+    width: 100%;
+}
+
+.chart {
+    float: left;
+    width: 33.33%;
+}
