@@ -25,6 +25,6 @@ This is where I keep all the final versions of my projects. This README will be 
 	* An improved heatmap that took less time to load, was better for demonstrating the pandemic and allowed for vertical panning.
 	* A fixed search functionality that accepts the name of a country in any form (lowercase or uppercase) as long as its correct. 
 	* Fixed table scrolling on small screens. 
-* instaclone: an Instagram clone made with Laravel. A user can sign up, sign in, update his/her profile, post images and follow other users. This is my first back-end web project.
-* larticle: an example of CRUD (Create, Read, Update, Delete). This project includes an articles API built with Laravel, it allows a user to see all existing articles in the database, edit/delete an existing article and add articles. This project also includes a front-end interface built with Vue.js that interacts with the API.
+* instaclone: an Instagram clone made with Laravel. A user can sign up, sign in, update his/her profile, post images and follow other users. This is my first back-end web project and an implementaion of [this tutorial](https://www.youtube.com/watch?v=ImtZ5yENzgE). 
+* larticle: an example of CRUD (Create, Read, Update, Delete). This project includes an articles API built with Laravel, it allows a user to see all existing articles in the database, edit/delete an existing article and add articles. This project also includes a front-end interface built with Vue.js that interacts with the API. This is an implementation of [this tutorial](https://www.youtube.com/watch?v=DJ6PD_jBtU0).
 
