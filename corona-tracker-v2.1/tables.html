@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="en-us">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
+    <script src="resources/jquery-3.5.0.min.js"></script>
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Main stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/rwd.css">
+    <!-- Main scripts -->
+    <script src="scripts/script.js"></script>
+    <script src="scripts/tables.js"></script>
+    <title>COVID-19 Tracker | Tables</title>
+</head>
+
+<body>
+    <div id="content" class="overlay-shift-active">
+
+        <nav id="nav-bar" class="title-bar navbar-shift-overlay-active">
+            <div class="page-title">Tables</div>
+            <div id="toggle-sidebar-btn" class="toggle-sidebar">
+                <i class="material-icons">menu</i>
+            </div>
+        </nav>
+        <div class="main-content">
+            <div style="text-align: center;">
+                <div class="pagination noselect">
+                    <span class="pagination-btn" id="first-btn">
+                        <i style="position: relative; top: 5px;" class="material-icons">
+                            first_page
+                        </i>
+                    </span>
+                    <span class="pagination-btn" id="prev-btn">
+                        <i style="position: relative; top: 5px;" class="material-icons">
+                            navigate_before
+                        </i>
+                    </span>
+                    <span>
+                        <span id="current-page"></span>
+                        <span>/</span>
+                        <span id="total-pages"></span>
+                    </span>
+                    <span class="pagination-btn" id="next-btn">
+                        <i style="position: relative; top: 5px;" class="material-icons">
+                            navigate_next
+                        </i>
+                    </span>
+                    <span class="pagination-btn" id="last-btn">
+                        <i style="position: relative; top: 5px;" class="material-icons">
+                            last_page
+                        </i>
+                    </span>
+                </div>
+            </div>
+            <div class="table-container">
+                <table id=" countries-table">
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Cases</th>
+                            <!--<th>New Cases</th>-->
+                            <th>Deaths</th>
+                            <!--<th>New Deaths</th>-->
+                            <th>Recovered</th>
+                            <th>Active</th>
+                            <th>Serious</th>
+                            <!--<th>Cases / 1M</th>-->
+                            <!--<th>Deaths / 1M</th>-->
+                            <th>Tests</th>
+                            <!--<th>Tests / 1M</th>-->
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+            </div>
+            <div class="container">
+                <div class="extra-info-card">
+                    <div style="border-top: 5px solid darkblue;" class="extra-info-item">
+                        <span>Total Cases: </span><br>
+                        <span style="color: darkblue;" id="country-picker-total-cases"></span>
+                    </div>
+                    <div style="border-top: 5px solid #616161;" class="extra-info-item">
+                        <span>Total Deaths: </span><br>
+                        <span style="color: #616161;" id="country-picker-total-deaths"></span>
+                    </div>
+                    <div style="border-top: 5px solid darkgreen;" class="extra-info-item">
+                        <span>Total Recovered: </span><br>
+                        <span style="color: darkgreen;" id="country-picker-total-recovered"></span>
+                    </div>
+                    <div style="border-top: 5px solid #ffc107;" class="extra-info-item">
+                        <span>Total Active: </span><br>
+                        <span style="color: #ffc107;" id="country-picker-total-active"></span>
+                    </div>
+                    <div style="border-top: 5px solid crimson;" class="extra-info-item">
+                        <span>Total Serious: </span><br>
+                        <span style="color: crimson;" id="country-picker-total-serious"></span>
+                    </div>
+                    <div style="border-top: 5px solid #883818;" class="extra-info-item">
+                        <span>Total Tests: </span><br>
+                        <span style="color: #883818;" id="country-picker-total-tests"></span>
+                    </div>
+                </div>
+                <div class="card" id="country-picker-container">
+                    <h3>Show me details about:</h3>
+                    <div>  
+                        <input placeholder="Enter country name" style="text-align: center;" id="country-picker" list="countries-datalist">
+                        <datalist id="countries-datalist">
+                        </datalist>
+                        <div id="details-country-picker-btn" class="country-picker-btn">Go</div>
+                    </div>
+                    <div id="country-picker-flag-container">
+                        <img id="country-picker-flag">
+                    </div>
+                    <div>
+                        <span style="color:darkblue; font-weight: bold;">
+                            <span id="cases-percent"></span>%
+                        </span> of cases
+                        <br>
+                        <span style="color: #616161; font-weight: bold;">
+                            <span id="deaths-percent"></span>%
+                        </span> of deaths
+                        <br>
+                        <span style="color: darkgreen; font-weight: bold;">
+                            <span id="recovered-percent"></span>%
+                        </span> of recoveries
+                    </div>
+                </div>
+                <div class="extra-info-card">
+                    <div style="border-top: 5px solid #3030f1;" class="extra-info-item">
+                        <span>Cases today: </span><br>
+                        <span style="color: #3030f1;" id="country-picker-new-cases"></span>
+                    </div>
+                    <div style="border-top: 5px solid #4b4bcc;" class="extra-info-item">
+                        <span>Cases per one million: </span><br>
+                        <span style="color: #4b4bcc;" id="country-picker-cases-per-mil"></span>
+                    </div>
+                    <div style="border-top: 5px solid #3d3d3d;" class="extra-info-item">
+                        <span>Deaths today: </span><br>
+                        <span style="color: #3d3d3d;" id="country-picker-new-deaths"></span>
+                    </div>
+                    <div style="border-top: 5px solid #757575;" class="extra-info-item">
+                        <span>Deaths per one million: </span><br>
+                        <span style="color: #757575;" id="country-picker-deaths-per-mil"></span>
+                    </div>
+                    <div style="border-top: 5px solid #da5a28;" class="extra-info-item">
+                        <span>Tests per one million: </span><br>
+                        <span style="color: #da5a28;" id="country-picker-tests-per-mil"></span>
+                    </div>
+                    <div style="border-top: 5px solid #ff2a2a;" class="extra-info-item">
+                        <span>Global ranking by total cases: </span><br>
+                        <span style="color: #ff2a2a;" id="country-picker-rank"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav id="sidebar" class="sidebar sidebar-active">
+        <div class="sidebar-logo">
+            <span>COVID-19 Tracker</span>
+        </div>
+        <div class="sidebar-nav">
+            <a class="nav-item" href="index.html">
+                <i class="material-icons nav-icon">dashboard</i>
+                Dashboard
+            </a>
+            <a class="nav-item nav-item-active" href="#">
+                <i class="material-icons nav-icon">table_chart</i>
+                Tables
+            </a>
+            <a class="nav-item" href="charts.html">
+                <i class="material-icons nav-icon">bar_chart</i>
+                Charts
+            </a>
+            <a class="nav-item" href="map.html">
+                <i class="material-icons nav-icon">explore</i>
+                Map
+            </a>
+            <a id="close-sidebar-btn" class="nav-item">
+                <i class="material-icons nav-icon">cancel</i>
+                Close sidebar
+            </a>
+        </div>
+    </nav>
+</body>
+
+</html>
